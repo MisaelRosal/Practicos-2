@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #f6f8f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+:root {
+    --bs-accent: #2f5564;
+    --bs-muted: #6c7a7d;
+}
+
+.navbar-logo {
+    height: 36px;       
+    width: auto;        
+    object-fit: contain; 
+}
+
+.navbar-brand {
+    margin-right: 2rem;
+}
