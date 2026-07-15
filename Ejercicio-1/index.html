@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons (Para el botón de tema, flechas, etc.) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="./CSS/Style.css" rel="stylesheet" />
+    <title>DevAcademy - Inicio</title>
+  </head>
+  <body>
+    <!-- 1. Spinner de Carga Inicial -->
+    <div id="loadingSpinner" class="spinner-wrapper">
+      <div class="spinner-border text-primary-custom" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
+    </div>
+    <header class="sticky-top shadow-sm">
+      <!-- Barra de navegación responsive -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid container-custom">
+          <!-- 1. Marca y Logo (Izquierda) -->
+          <a class="navbar-brand d-flex align-items-center" href="#">
+            <img
+              src="./Image/Icon-Tec.png"
+              alt="Logo"
+              class="navbar-logo me-2"
+              onerror="this.src = 'https://placehold.co/40x40?text=Dev'"
+            />
+          </a>
+          <div class="d-flex flex-column">
+            <span class="fw-semibold">DevAcademy</span>
+            <small class="text-muted d-none d-sm-block"
+              >Cursos tecnológicos y capacitaciones</small
+            >
+          </div>
+
+          <!-- Contenedor para agrupar los botones en móvil (mantiene el orden visual en la derecha) -->
+          <div class="d-flex align-items-center ms-auto order-lg-last">
+            <!-- 2. Botón de cambio de tema (Ahora se mantiene a la derecha siempre) -->
+            <button
+              id="themeToggle"
+              class="btn btn-outline-secondary ms-2 rounded-circle"
+              aria-label="Cambiar tema"
+            >
+              <i class="bi bi-sun-fill"></i>
+            </button>
+
+            <!-- 3. Botón de hamburguesa para móviles -->
+            <button
+              class="navbar-toggler ms-2"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <!-- 4. Menú de navegación (Se expande a la izquierda del botón de tema en escritorio) -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+              <li class="nav-item">
+                <a class="nav-link active fw-semibold" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-semibold" href="#sobre-nosotros"
+                  >Sobre nosotros</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-semibold" href="#cursos">Cursos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-semibold" href="#horarios">Horarios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-semibold" href="#galeria">Galería</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-semibold" href="#faq">Preguntas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-semibold" href="#contacto">Contactos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="flex-grow-1">
+      <!-- 2. Hero Section con Carrusel Integrado -->
+      <section
+        class="hero-section position-relative overflow-hidden text-white"
+      >
+        <div
+          id="heroCarousel"
+          class="carousel slide carousel-fade position-absolute top-0 start-0 w-100 h-100"
+          data-bs-ride="carousel"
+          data-bs-interval="5000"
+        >
+          <div class="carousel-inner h-100">
+            <!-- Imagen 1 (Activa) -->
+            <div class="carousel-item active h-100">
+              <div
+                class="carousel-bg"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1470&auto=format&fit=crop&quot;);
+                "
+              ></div>
+            </div>
+            <!-- Imagen 2 -->
+            <div class="carousel-item h-100">
+              <div
+                class="carousel-bg"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1471&auto=format&fit=crop&quot;);
+                "
+              ></div>
+            </div>
+            <!-- Imagen 3 -->
+            <div class="carousel-item h-100">
+              <div
+                class="carousel-bg"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1470&auto=format&fit=crop&quot;);
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenido fijo sobre el carrusel -->
+        <div
+          class="container position-relative py-5 container-custom"
+          style="z-index: 3"
+        >
+          <div class="row align-items-center g-4">
+            <div class="col-lg-7 text-start">
+              <h1 class="display-5 fw-bold mb-3 hero-title">
+                Bienvenido a DevAcademy
+              </h1>
+              <p class="lead text-white-50 mb-4 hero-lead">
+                Explora nuestros cursos prácticos, domina las herramientas más
+                demandadas y certifícate hoy mismo con DevAcademy.
+              </p>
+              <div class="d-flex flex-wrap gap-3">
+                <a
+                  href="#cursos"
+                  class="btn btn-custom-accent rounded-pill px-4 py-2 fw-medium"
+                >
+                  Ver Cursos Disponibles
+                </a>
+                <a
+                  href="#contacto"
+                  class="btn btn-outline-light rounded-pill px-4 py-2 fw-medium"
+                >
+                  Regístrate ahora
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Sección de Información Institucional & Video -->
+      <section id="sobre-nosotros" class="py-5">
+        <div class="container container-custom">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <span class="text-uppercase text-primary-custom fw-bold small"
+                >¿Quiénes somos?</span
+              >
+              <h2 class="fw-bold mt-2 mb-4">
+                Forjando el futuro de los profesionales tecnológicos
+              </h2>
+              <p class="text-muted">
+                En <strong>DevAcademy</strong> nos dedicamos a cerrar la brecha
+                de habilidades digitales ofreciendo planes de estudio modernos,
+                prácticos y actualizados con las tecnologías del entorno laboral
+                actual.
+              </p>
+              <p class="text-muted">
+                Nuestras instalaciones y nuestra metodología basada en proyectos
+                te permitirán avanzar de cero a experto de la mano de mentores
+                calificados en activo en la industria internacional.
+              </p>
+              <div class="row g-3 mt-2">
+                <div class="col-6 col-md-4">
+                  <h4 class="fw-bold text-primary-custom mb-0">+5,000</h4>
+                  <small class="text-muted">Graduados</small>
+                </div>
+                <div class="col-6 col-md-4">
+                  <h4 class="fw-bold text-primary-custom mb-0">95%</h4>
+                  <small class="text-muted">Empleabilidad</small>
+                </div>
+              </div>
+            </div>
+            <!-- Video Institucional -->
+            <div class="col-lg-6">
+              <div
+                class="ratio ratio-16x9 rounded shadow-lg overflow-hidden border"
+              >
+                <!-- Video de muestra incrustado de Youtube -->
+                <iframe
+                  src="https://www.youtube.com/embed/H5tE7KCDlk"
+                  title="Video Institucional DevAcademy"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Sección de Cursos (Tarjetas) -->
+      <section id="cursos" class="py-5 bg-section-light">
+        <div class="container container-custom">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold">Programas Destacados</h2>
+            <p class="text-muted">
+              Selecciona tu próximo paso profesional con nuestra oferta
+              académica
+            </p>
+          </div>
+          <div class="row g-4">
+            <!-- Tarjeta 1 -->
+            <div class="col-md-6 col-lg-4">
+              <div
+                class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden card-hover"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600"
+                  class="card-img-top card-img-custom"
+                  alt="Desarrollo Web"
+                />
+                <div class="card-body p-4">
+                  <span class="badge bg-primary-custom mb-2">Desarrollo</span>
+                  <h5 class="card-title fw-bold">Desarrollo Web Full Stack</h5>
+                  <p class="card-text text-muted">
+                    Domina desde las bases HTML/CSS hasta frameworks robustos
+                    como React, Node.js y bases de datos NoSQL.
+                  </p>
+                </div>
+                <div class="card-footer bg-transparent border-0 px-4 pb-4">
+                  <a
+                    href="#contacto"
+                    class="btn btn-outline-primary-custom w-100 rounded-pill"
+                    >Inscribirse</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Tarjeta 2 -->
+            <div class="col-md-6 col-lg-4">
+              <div
+                class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden card-hover"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600"
+                  class="card-img-top card-img-custom"
+                  alt="Ciberseguridad"
+                />
+                <div class="card-body p-4">
+                  <span class="badge bg-danger mb-2">Seguridad</span>
+                  <h5 class="card-title fw-bold">Ciberseguridad Práctica</h5>
+                  <p class="card-text text-muted">
+                    Aprende técnicas avanzadas de ethical hacking, análisis de
+                    vulnerabilidades y hardening de redes.
+                  </p>
+                </div>
+                <div class="card-footer bg-transparent border-0 px-4 pb-4">
+                  <a
+                    href="#contacto"
+                    class="btn btn-outline-primary-custom w-100 rounded-pill"
+                    >Inscribirse</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Tarjeta 3 -->
+            <div class="col-md-6 col-lg-4">
+              <div
+                class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden card-hover"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600"
+                  class="card-img-top card-img-custom"
+                  alt="Ciencia de Datos"
+                />
+                <div class="card-body p-4">
+                  <span class="badge bg-success mb-2">Datos</span>
+                  <h5 class="card-title fw-bold">Data Science & AI</h5>
+                  <p class="card-text text-muted">
+                    Adéntrate en Python, machine learning, manipulación con
+                    Pandas y despliegue de modelos de inteligencia artificial.
+                  </p>
+                </div>
+                <div class="card-footer bg-transparent border-0 px-4 pb-4">
+                  <a
+                    href="#contacto"
+                    class="btn btn-outline-primary-custom w-100 rounded-pill"
+                    >Inscribirse</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Sección de Horarios (Tabla) -->
+      <section id="horarios" class="py-5">
+        <div class="container container-custom">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold">Horarios de Clases</h2>
+            <p class="text-muted">
+              Elige el turno que mejor se acople a tu vida laboral o académica
+            </p>
+          </div>
+          <div class="table-responsive rounded shadow-sm border">
+            <table class="table table-hover table-striped mb-0 align-middle">
+              <thead class="table-dark-custom text-white">
+                <tr>
+                  <th scope="col" class="py-3 px-4">Curso</th>
+                  <th scope="col" class="py-3">Días</th>
+                  <th scope="col" class="py-3">Horario</th>
+                  <th scope="col" class="py-3">Modalidad</th>
+                  <th scope="col" class="py-3 text-center">Cupos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="py-3 px-4 fw-semibold text-primary-custom">
+                    Full Stack Web Developer
+                  </th>
+                  <td>Lunes y Miércoles</td>
+                  <td>18:30 - 21:30</td>
+                  <td>En vivo / Online</td>
+                  <td class="text-center">
+                    <span class="badge bg-success">Disponibles</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="py-3 px-4 fw-semibold text-primary-custom">
+                    Ciberseguridad Práctica
+                  </th>
+                  <td>Martes y Jueves</td>
+                  <td>19:00 - 22:00</td>
+                  <td>Presencial / Híbrida</td>
+                  <td class="text-center">
+                    <span class="badge bg-warning text-dark"
+                      >Últimos cupos</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <th class="py-3 px-4 fw-semibold text-primary-custom">
+                    Data Science & AI
+                  </th>
+                  <td>Sábados</td>
+                  <td>08:00 - 14:00</td>
+                  <td>En vivo / Online</td>
+                  <td class="text-center">
+                    <span class="badge bg-danger">Agotado</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Galería de Imágenes -->
+      <section id="galeria" class="py-5 bg-section-light">
+        <div class="container container-custom">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold">Nuestra Comunidad e Instalaciones</h2>
+            <p class="text-muted">
+              Conoce los espacios colaborativos y laboratorios que te esperan
+            </p>
+          </div>
+          <div class="row g-3">
+            <div class="col-6 col-md-4 col-lg-3">
+              <div
+                class="gallery-item overflow-hidden rounded-3 shadow-sm border position-relative"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=400"
+                  class="img-fluid w-100 h-100 object-fit-cover"
+                  alt="Clases Colaborativas"
+                />
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <div
+                class="gallery-item overflow-hidden rounded-3 shadow-sm border position-relative"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=400"
+                  class="img-fluid w-100 h-100 object-fit-cover"
+                  alt="Estaciones de Trabajo"
+                />
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <div
+                class="gallery-item overflow-hidden rounded-3 shadow-sm border position-relative"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=400"
+                  class="img-fluid w-100 h-100 object-fit-cover"
+                  alt="Tutorías Grupales"
+                />
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <div
+                class="gallery-item overflow-hidden rounded-3 shadow-sm border position-relative"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?q=80&w=400"
+                  class="img-fluid w-100 h-100 object-fit-cover"
+                  alt="Laboratorio Tecnológico"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Preguntas Frecuentes (Accordion) -->
+      <section id="faq" class="py-5">
+        <div class="container container-custom">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold">Preguntas Frecuentes</h2>
+            <p class="text-muted">
+              Resolvemos tus dudas iniciales sobre inscripciones e
+              infraestructura
+            </p>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div
+                class="accordion accordion-flush shadow-sm border rounded-4 overflow-hidden"
+                id="accordionFAQ"
+              >
+                <!-- Item 1 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button fw-semibold"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseOne"
+                      aria-expanded="true"
+                      aria-controls="flush-collapseOne"
+                    >
+                      ¿Necesito conocimientos previos para iniciar los cursos?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseOne"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#accordionFAQ"
+                  >
+                    <div class="accordion-body text-muted">
+                      No es necesario. Nuestros trayectos de iniciación están
+                      estructurados de forma que cualquier entusiasta pueda
+                      empezar desde cero. Te daremos las bases lógicas antes de
+                      profundizar.
+                    </div>
+                  </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed fw-semibold"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseTwo"
+                    >
+                      ¿Se otorgan certificaciones oficiales al finalizar?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseTwo"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFAQ"
+                  >
+                    <div class="accordion-body text-muted">
+                      Sí. Al cumplir con el 80% de asistencia y entregar
+                      satisfactoriamente el proyecto final integrador, recibirás
+                      una certificación avalada por nuestra academia y empresas
+                      aliadas del sector.
+                    </div>
+                  </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed fw-semibold"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseThree"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseThree"
+                    >
+                      ¿Cuentan con bolsa de empleo?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseThree"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFAQ"
+                  >
+                    <div class="accordion-body text-muted">
+                      Sí, disponemos de una red de contactos que asiste y recibe
+                      perfiles egresados. Además, ofrecemos talleres mensuales
+                      gratuitos de optimización de perfil de LinkedIn y
+                      preparación de CV técnico.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. Formulario de Contacto -->
+      <section id="contacto" class="py-5 bg-section-light">
+        <div class="container container-custom">
+          <div class="row g-5">
+            <div class="col-lg-5">
+              <h2 class="fw-bold mb-3">Contáctanos</h2>
+              <p class="text-muted mb-4">
+                ¿Tienes dudas sobre los costos, becas o metodologías? Escríbenos
+                directamente y un asesor académico se pondrá en contacto contigo
+                en menos de 24 horas hábiles.
+              </p>
+              <div class="d-flex align-items-center mb-3">
+                <div
+                  class="contact-icon bg-primary-custom text-white me-3 rounded-circle d-flex align-items-center justify-content-center"
+                  style="width: 48px; height: 48px"
+                >
+                  <i class="bi bi-geo-alt"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-0">Ubicación</h6>
+                  <small class="text-muted"
+                    >Av. Tecnológica 123, Distrito Digital</small
+                  >
+                </div>
+              </div>
+              <div class="d-flex align-items-center mb-3">
+                <div
+                  class="contact-icon bg-primary-custom text-white me-3 rounded-circle d-flex align-items-center justify-content-center"
+                  style="width: 48px; height: 48px"
+                >
+                  <i class="bi bi-envelope"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-0">Correo Electrónico</h6>
+                  <small class="text-muted">soporte@devacademy.com</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Formulario de validación para Bootstrap (Se requiere 'novalidate' para manejar la validación nativa o por JS posterior) -->
+            <div class="col-lg-7">
+              <div class="card border-0 shadow-sm p-4 rounded-4">
+                <form id="contactForm" class="needs-validation" novalidate>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="validationNombre" class="form-label fw-medium"
+                        >Nombre completo</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="validationNombre"
+                        required
+                        placeholder="Tu nombre"
+                      />
+                      <div class="invalid-feedback">
+                        Por favor introduce tu nombre.
+                      </div>
+                      <div class="valid-feedback">¡Se ve bien!</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="validationEmail" class="form-label fw-medium"
+                        >Email institucional o personal</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="validationEmail"
+                        required
+                        placeholder="correo@ejemplo.com"
+                      />
+                      <div class="invalid-feedback">
+                        Introduce una dirección de correo válida.
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <label for="validationCurso" class="form-label fw-medium"
+                        >Curso de interés</label
+                      >
+                      <select class="form-select" id="validationCurso" required>
+                        <option selected disabled value="">
+                          Selecciona...
+                        </option>
+                        <option>Desarrollo Web Full Stack</option>
+                        <option>Ciberseguridad Práctica</option>
+                        <option>Data Science & AI</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Selecciona un curso de interés de la lista.
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <label
+                        for="validationMensaje"
+                        class="form-label fw-medium"
+                        >Mensaje</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="validationMensaje"
+                        rows="4"
+                        required
+                        placeholder="Describe tus preguntas aquí..."
+                      ></textarea>
+                      <div class="invalid-feedback">
+                        Por favor escribe un mensaje corto.
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button
+                        class="btn btn-custom-accent w-100 rounded-pill py-2 fw-medium"
+                        type="submit"
+                      >
+                        Enviar mensaje
+                      </button>
+                    </div>
+                  </div>
+                </form>
+
+                <!-- Espacio de contenedor para los mensajes/alertas de Bootstrap (Controlados dinámicamente) -->
+                <div id="formAlertContainer" class="mt-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white-50 py-4 border-top border-secondary">
+      <div
+        class="container container-custom d-flex flex-wrap justify-content-between align-items-center"
+      >
+        <p class="mb-0 small">
+          &copy; 2026 DevAcademy. Todos los derechos reservados.
+        </p>
+        <ul class="nav list-unstyled d-flex gap-3 small">
+          <li>
+            <a href="#" class="text-white-50 text-decoration-none"
+              >Privacidad</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white-50 text-decoration-none"
+              >Términos de servicio</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- 9. Botón para regresar al inicio -->
+    <a
+      href="#"
+      id="backToTop"
+      class="btn btn-custom-accent rounded-circle position-fixed bottom-0 end-0 m-4 shadow d-flex align-items-center justify-content-center"
+      style="width: 50px; height: 50px; z-index: 1000"
+      aria-label="Volver arriba"
+    >
+      <i class="bi bi-arrow-up-short fs-3 text-white"></i>
+    </a>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./Apps/App.index.js"></script>
+  </body>
+</html>
