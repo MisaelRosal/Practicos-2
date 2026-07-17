@@ -1,8 +1,3 @@
-/**
- * DevEvents Academy - Sistema Web de Gestión de Eventos
- * Almacenamiento en LocalStorage
- */
-
 // --- CONFIGURACIÓN DE DATOS SEMILLA (Si está vacío) ---
 const SEED_DATA = [
   {

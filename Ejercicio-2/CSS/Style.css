@@ -1,51 +1,193 @@
-/* Custom CSS - DevEvents Academy */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
-/* Tipografía y espaciados generales */
-body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  color: #2b2d42;
+:root {
+  --mono-black: #121212;
+  --mono-dark-gray: #1e1e1e;
+  --mono-gray: #2d2d2d;
+  --mono-muted: #6c757d;
+  --mono-light-gray: #f8f9fa;
+  --mono-border: #e9ecef;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
 }
 
-/* Transición suave para las tarjetas de eventos */
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--mono-black);
+  background-color: #fcfcfc;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- NAVBAR MONOCROMÁTICA --- */
+.navbar {
+  background-color: var(--mono-black) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.75rem 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* --- BOTONES PREMIUM --- */
+.btn {
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 1.2rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Botón Primario Monocromático (Negro) */
+.btn-primary, .btn-info {
+  background-color: var(--mono-black) !important;
+  border: 1px solid var(--mono-black) !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover, .btn-info:hover {
+  background-color: var(--mono-gray) !important;
+  border-color: var(--mono-gray) !important;
+  transform: translateY(-1px);
+}
+
+.btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-outline-light:hover {
+  background-color: #ffffff;
+  color: var(--mono-black);
+}
+
+/* Selectores de vista */
+#viewCardsBtn, #viewTableBtn {
+  border-color: var(--mono-border);
+  color: var(--mono-muted);
+}
+
+#viewCardsBtn.active, #viewTableBtn.active {
+  background-color: var(--mono-black) !important;
+  border-color: var(--mono-black) !important;
+  color: #ffffff !important;
+}
+
+/* --- TARJETAS DE EVENTOS --- */
 .event-card {
+  border: 1px solid var(--mono-border) !important;
+  border-radius: var(--radius-md) !important;
+  background-color: #ffffff;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  border: none;
 }
 
 .event-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04) !important;
+  border-color: #ced4da !important;
 }
 
-/* Encabezados de categorías */
 .bg-gradient-tech {
-  background: linear-gradient(135deg, #1d3557, #457b9d);
+  background: var(--mono-black) !important;
+  padding: 1.25rem !important;
 }
 
-/* Mejoras en el Toast de notificación */
-.toast {
-  min-width: 280px;
+/* --- TABLAS MÍNIMALISTAS --- */
+.table-responsive.card {
+  border-radius: var(--radius-md) !important;
+  border: 1px solid var(--mono-border) !important;
 }
 
-/* Detalle colapsable de descripción */
-.collapse-btn {
-  font-size: 0.85rem;
-  text-decoration: none;
+.table thead {
+  background-color: var(--mono-light-gray);
+  border-bottom: 2px solid var(--mono-border);
 }
 
-/* Efectos visuales de botones activos */
-#viewCardsBtn.active, #viewTableBtn.active {
-  background-color: #6c757d;
-  color: #fff;
+.table thead th {
+  color: var(--mono-gray);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1rem 0.75rem;
 }
 
-/* Control del espaciado de badges */
+.table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.table tbody tr:hover {
+  background-color: var(--mono-light-gray) !important;
+}
+
+/* --- BADGES Y CONTENEDORES --- */
 .badge {
-  letter-spacing: 0.03em;
+  font-weight: 600;
+  padding: 0.4em 0.7em;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
 }
 
-/* Paginación activa estilo moderno */
+.badge.bg-dark {
+  background-color: var(--mono-black) !important;
+}
+
+/* --- ELEMENTOS DE FORMULARIO --- */
+.form-control, .form-select {
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid #dcdcdc;
+  padding: 0.55rem 0.75rem;
+  color: var(--mono-black);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--mono-black);
+  box-shadow: 0 0 0 3px rgba(18, 18, 18, 0.05);
+}
+
+/* --- MODALES Y OFFCANVAS --- */
+.modal-content {
+  border-radius: var(--radius-lg) !important;
+  overflow: hidden;
+}
+
+.modal-header, .offcanvas-header {
+  background-color: var(--mono-black) !important;
+  padding: 1.25rem 1.5rem;
+}
+
+.offcanvas {
+  border-left: 1px solid var(--mono-border) !important;
+  background-color: #ffffff;
+}
+
+/* --- PAGINACIÓN --- */
+.page-link {
+  font-size: 0.85rem;
+  color: var(--mono-gray);
+  border: 1px solid var(--mono-border);
+  padding: 0.5rem 0.85rem;
+}
+
+.page-link:hover {
+  color: var(--mono-black);
+  background-color: var(--mono-light-gray);
+}
+
 .page-item.active .page-link {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: var(--mono-black) !important;
+  border-color: var(--mono-black) !important;
+  color: #ffffff !important;
+}
+
+/* --- TOASTS DE NOTIFICACIÓN --- */
+.toast {
+  border-radius: var(--radius-md) !important;
+  background-color: var(--mono-black) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15) !important;
 }
